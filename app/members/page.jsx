@@ -1,9 +1,9 @@
 "use client"
 import {signOut, useSession} from "next-auth/react"
-import { redirect } from "next/dist/server/api-utils"
+import { redirect } from "next/navigation"
 
 const Page = () => {
-    const {data:session} = useSession()
+    const {data:session, status} = useSession()
     if(!session) redirect("/sign-in")
 
     const handleLogout = ()=> {
