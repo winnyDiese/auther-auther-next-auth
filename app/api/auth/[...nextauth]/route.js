@@ -1,4 +1,8 @@
 
+import NextAuth from "next-auth/next"
+import CredentialsProvider from "next-auth/providers/credentials"
+
+
 const handler = NextAuth({
     session:{
         maxAge:85000,
@@ -25,12 +29,12 @@ const handler = NextAuth({
     secret:"secretbetsportsprojecttoken",
     providers:[
         CredentialsProvider({
-            type:"credenttials",
+            type:"credentials",
             credentials:{},
-            async authorize(credentials){
+            async authorize(credentials,req){
                 const Options = {
                     method:"POST",
-                    headers:{"Contnt-Type":"application/json"},
+                    headers:{"Content-Type":"application/json"},
                     body:JSON.stringify({
                         email: credentials.email,
                         password: credentials.password   
