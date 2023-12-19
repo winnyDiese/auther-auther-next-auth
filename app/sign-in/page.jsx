@@ -10,9 +10,14 @@ const Page = () => {
     const handleSubmit = async e=>{
         e.preventDefault()
 
+        // const form = {
+        //     email:"frdrcpeter@gmail.com",
+        //     password:"azerty"
+        // }
+
         const form = {
-            email:"frdrcpeter@gmail.com",
-            password:"azerty"
+            email:"maradona@gmail.com",
+            password:"123"
         }
 
         const res = await signIn("credentials", {

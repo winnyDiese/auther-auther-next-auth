@@ -41,7 +41,8 @@ const handler = NextAuth({
                     })
                 }
 
-                const response = await fetch( "https://api-bet-sports.onrender.com/api/users/login",Options)
+                const response = await fetch("http://localhost:3001/api/user/login",Options)
+                // const response = await fetch( "https://api-bet-sports.onrender.com/api/users/login",Options)
 
                 const json = await response.json()
                 if(!json.state) throw new Error(json.message)

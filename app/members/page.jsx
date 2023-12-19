@@ -14,7 +14,7 @@ const Page = () => {
         <div>
             Members Page
 
-            <p> {session?.user?.fullname}</p>
+            <p> {session?.user?.name}</p>
             <button 
                 onClick={handleLogout}
                 className="bg-black text-white p-3"
